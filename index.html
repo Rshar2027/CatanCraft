@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ronit's Catan Board Generator</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        .board {
+            text-align: center;
+            padding-top: 60px;
+        }
+
+
+        .row {
+            margin-bottom: -22px;
+        }
+
+        .tile {
+            display: inline-block;
+            margin: 0 0px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .odd-row .tile {}
+
+        .generator-div {
+            display: grid;
+        }
+
+        .text-overlay {
+            display: inline-block;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            margin-left: -64px;
+            margin-bottom: -30px;
+            color: whitesmoke;
+            font-size: 24px;
+
+            /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+        }
+
+        .text-overlay-text {
+            margin-top: 10px;
+        }
+
+        .button {
+           float: middle;
+        }
+		
+		.title {
+			
+			text-align:center;
+			font-size:90px;
+			font-family: "Papyrus";
+			font-weight:bold;
+			
+			
+			
+		}
+		
+		.background {
+			
+			background-color:gray;
+			
+			
+			
+		}
+		
+		
+		.title_background {
+			
+			background: linear-gradient(#002D62, gray);
+			
+			
+			
+			
+			
+		}
+		
+		.center_button{
+			
+			
+			
+			padding-right:10em;
+			float: right;
+			padding-top:10em
+			
+		}
+		
+		.board {
+			
+			
+			padding-right:50em;
+			
+		}
+		
+		.button {
+			
+			font-family:"Copperplate";
+			font-size:100px;
+			
+			
+			
+			
+			
+		}
+		
+		.setup {
+			
+			
+			font-family:"monaco";
+			font-style:40px;
+			
+			
+		}
+		
+		h2 {
+			
+			
+			
+			
+			
+		}
+		
+		.robber {
+			
+			width:160px;
+			
+			
+		}
+		
+		.catan {
+			
+			
+			width:500px;
+			display: block;
+  			margin-left: auto;
+ 			margin-right: auto;
+			border-radius:8%;
+			
+			
+			
+			
+			
+		}
+		
+		.logo {
+			
+			
+			width:250px;
+			
+			
+			
+			
+		}
+		
+		hr {
+			
+			
+			border: 3px dashed black;
+			
+  			
+			
+		 }
+		
+		.lineA {
+			
+		
+			padding-top:7em;
+			
+		}
+		
+    </style>
+    <py-config>
+        packages = []
+        [[fetch]]
+        files=["./catan1.py"]
+    </py-config>
+
+</head>
+
+<body class="background">
+	
+	
+
+    <py-script src="catan1.py"></py-script>
+	<div class="title_background"><h1 class="title">Catan Board Generator</h1></div>
+	<div class="generator-div"></div>
+	
+        
+        <div class="grid-item">
+			<div class="center_button"><button py-click="generate()" class="button">Generate</button></div>
+            <div id="output" class="board"></div>
+           
+        </div>
+	
+	<div class="lineA"><hr style="width:100%;margin-top:0"></div>
+	
+	<marquee direction="right" scrollamount="5"><img src="logo.png" class="logo"></marquee>
+	
+	<div class="lineB"><hr style="width:100%;margin-left:0"></div>
+	
+	<h2>How To Play Settlers Of Catan 5-6 Player Extension:</h2>
+	
+	<p class="setup">
+
+Setup:
+
+Component Integration: Incorporate the additional player pieces (settlements, cities, and roads) from the extension pack into the base game's components.
+Board Expansion: Attach the extra hexagonal tiles to enlarge the game board, adhering to the base game's placement rules to maintain balance.
+Resource Distribution: Evenly distribute resources across the extended map to ensure fairness and strategic diversity for all players.
+Development Card Integration: Shuffle the development cards from the expansion pack with the base game's stack to create a combined draw pile.
+Initial Placement Order: Determine the starting order, either through a random selection method or by mutual agreement among players, for the initial settlement and road placements.
+Tips for Playing:
+
+Strategic Expansion: Encourage players to plan their expansions carefully, considering the larger map and potential competition for resources and territory.
+Resource Management: Emphasize efficient resource gathering and trading, as the extended player count can heighten the competition for scarce resources.
+Diplomatic Negotiation: With more players, diplomacy becomes crucial. Encourage negotiation, alliances, and deal-making among participants to gain an edge.
+Adaptability: Remind players to stay flexible and adapt their strategies as the game progresses, as the increased player count introduces more variables and unpredictability.
+Enjoyment of Scale: Highlight the excitement of a larger-scale game, where alliances and rivalries can form on a grander stage, enhancing the overall experience for all players.
+By following these setup steps and incorporating these gameplay tips, the Caftan 5-6 player extension can offer a more dynamic and engaging experience for a larger group of players.</p>
+	
+	
+	<marquee direction="right" scrollamount="25"><img src="robber.PNG" class="robber"></marquee>
+	<img src="catan.jpg" class="catan">
+    <marquee direction="left" scrollamount="25"><img src="robber.PNG" class="robber"></marquee>
+</body>
+
+</html>
