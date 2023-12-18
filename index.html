@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ronit's Catan Board Generator</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+	
+	
+	<script>
+  function redirectToPage1() {
+    window.location.href = '4_6.html'; // Replace with your URL
+  }
+
+ 
+</script>
+
+	<style>
+	.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+		
+        .board {
+            text-align: center;
+            padding-top: 40px;
+			
+        }
+
+
+        .row {
+            margin-bottom: -22px;
+        }
+
+        .tile {
+            display: inline-block;
+            margin: 0 -2px;
+            width: 90px;
+            height: 90px;
+        }
+
+        .odd-row .tile {}
+
+        .generator-div {
+            display: grid;
+        }
+
+        .text-overlay {
+            display: inline-block;
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            margin-left: -95px;
+            margin-bottom: -100px;
+            color: whitesmoke;
+            font-size: 44px;
+
+            /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+        }
+
+        .text-overlay-text {
+            margin-top: 10px;
+        }
+
+        .button {
+           float: middle;
+        }
+		
+		.title {
+			
+			text-align:center;
+			font-size:130px;
+			font-family: "Papyrus";
+			font-weight:bold;
+			text-decoration: black dotted underline;
+			
+			
+		}
+		
+		.background {
+			
+			
+   background: linear-gradient(#1167b1, gray);
+
+
+			
+			
+			
+		}
+		
+		
+		
+		
+		.center_button{
+			
+			
+			
+			padding-right:11.5em;
+			float: right;
+			padding-top:10em
+			
+		}
+		
+		.board {
+			
+			
+			padding-right:50em;
+			
+		}
+		
+		.button {
+			
+			font-family:"Copperplate";
+			font-size:100px;
+			
+			
+			
+			
+			
+		}
+		
+		.setup {
+			
+			
+			font-family:"monaco";
+			font-style:40px;
+			
+			
+		}
+		
+		h2 {
+			
+			
+			
+			
+			
+		}
+		
+		.robber {
+			
+			width:160px;
+			
+			
+		}
+		
+		.catan {
+			
+			
+			width:500px;
+			display: block;
+  			margin-left: auto;
+ 			margin-right: auto;
+			border-radius:8%;
+			
+			
+			
+			
+			
+		}
+		
+		.logo {
+			
+			
+			width:220px;
+			
+			
+			
+			
+		}
+		
+		hr {
+			
+			
+			border: 3px dashed black;
+			
+  			
+			
+		 }
+		
+		.lineA {
+			
+		
+			padding-top:7em;
+			
+		}
+		
+		h3 {
+			
+			text-align:center;
+			font-family:"Copperplate";
+			font-size:50px;
+			margin-top:-2.5em;
+			
+			
+			
+			
+		}
+		
+		.center_switch {
+			
+			text-align:center;
+			
+			
+		}
+		
+		.random {
+			
+			padding-top:10em;
+			
+			
+			
+		}
+		
+		.fun {
+			
+			display: block;
+  			margin-left: auto;
+  			margin-right: auto;
+			width:600px;
+			margin-bottom:-50px;
+			
+			
+			
+		}
+		
+	
+	
+	</style>
+    
+    <py-config>
+        packages = []
+        [[fetch]]
+        files=["./catan1.py"]
+    </py-config>
+
+</head>
+
+<body class="background">
+	
+	
+
+    <py-script src="catan1.py"></py-script>
+	<div><h1 class="title">Catan Board Generator</h1>
+	<h3>Extension 5-6 Player</h3>
+	</div>
+	
+	<div class="generator-div"></div>
+	
+	<!-- Rectangular switch -->
+	<div class="center_switch">
+<label class="switch">
+  <input type="checkbox" onclick="redirectToPage1()">
+  <span class="slider"></span>
+</label>	
+		
+		</div>
+        
+        <div class="grid-item">
+			<div class="center_button"><button py-click="generate()" class="button">Generate</button></div>
+            <div id="output" class="board"></div>
+           
+        </div>
+	
+	<div class="random">
+	
+	<div class="lineA"><hr style="width:100%;margin-top:0"></div>
+	
+	
+	
+	<marquee direction="right" scrollamount="25"><img src="robber.PNG" class="robber"></marquee>
+	
+	<div class="lineB"><hr style="width:100%;margin-left:0"></div>
+	
+	
+	<img src="final_elements.PNG" class="fun" align="center"/>
+	
+	
+	
+	<div class="lineA"><hr style="width:100%;margin-top:0"></div>
+	
+	<marquee direction="left" scrollamount="25"><img src="robber.PNG" class="robber"></marquee>
+	
+	<div class="lineB"><hr style="width:100%;margin-left:0"></div>
+	
+	</div>
+
+	
+</body>
+
+</html>

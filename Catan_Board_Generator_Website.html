@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ronit's Catan Board Generator</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <style>
+        .board {
+            text-align: center;
+            padding-top: 60px;
+        }
+
+
+        .row {
+            margin-bottom: -22px;
+        }
+
+        .tile {
+            display: inline-block;
+            margin: 0 -2px;
+            width: 60px;
+            height: 60px;
+        }
+
+        .odd-row .tile {}
+
+        .generator-div {
+            display: grid;
+        }
+
+        .text-overlay {
+            display: inline-block;
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            margin-left: -64px;
+            margin-bottom: -30px;
+            color: whitesmoke;
+            font-size: 24px;
+
+            /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+        }
+
+        .text-overlay-text {
+            margin-top: 10px;
+        }
+
+        .button {
+           float: middle;
+        }
+		
+		.title {
+			
+			text-align:center;
+			font-size:90px;
+			font-family: "Papyrus";
+			font-weight:bold;
+			
+			
+			
+		}
+		
+		.background {
+			
+			background-color:gray;
+			
+			
+			
+		}
+		
+		
+		.title_background {
+			
+			background: linear-gradient(#002D62, gray);
+			
+			
+			
+			
+		}
+		
+		.center_button{
+			
+			
+			
+			padding-right:10em;
+			float: right;
+			
+		}
+		
+		.board {
+			
+			
+			padding-right:50em;
+			
+		}
+		
+		.button {
+			
+			font-family:"Copperplate";
+			font-size:100px;
+			
+			
+			
+			
+		}
+		
+    </style>
+    <py-config>
+        packages = []
+        [[fetch]]
+        files=["./catan1.py"]
+    </py-config>
+
+</head>
+
+<body class="background">
+
+    <py-script src="./catan1.py"></py-script>
+	<div class="title_background"><h1 class="title">Catan Board Generator</h1></div>
+	<div class="generator-div"></div>
+        
+        <div class="grid-item">
+            <div id="output" class="board"></div>
+           <div class="center_button"><button py-click="generate()" class="button">Generate</button></div>
+        </div>
+   
+</body>
+
+</html>
