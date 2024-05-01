@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
 <head>
-
-<!-- Google tag (gtag.js) -->
+<meta charset="UTF-8">
+<title>replace</title>
+	
+	<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XX4PR93WM7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -12,84 +13,181 @@
 
   gtag('config', 'G-XX4PR93WM7');
 </script>
-
-
 	
-    <title>Ronit's Catan Board Generator</title>
-    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+	 <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 	
+		
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 	
 	<script>
-  function redirectToPage1() {
-    window.location.href = '4_6.html'; // Replace with your URL
-  }
+	
+	const lis = document.querySelectorAll("li");
+const a = document.querySelectorAll("li a");
 
- 
-</script>
-
+for (let i = 0; i < lis.length; i++) {
+  lis[i].addEventListener("click", function() {
+    for (let i = 0; i < lis.length; i++) {
+      lis[i].classList.remove("active");
+      a[i].classList.remove("active-text");
+    }
+    this.classList.add("active");
+    a[i].classList.add("active-text");
+  });
+}
+	</script>
+	
 	<style>
-	.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-
+		
+		
+/*Cool Navigation Bar*/		
+		
+		@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
+html, body {
+  width: 100%;
+  height: 100%;
 }
 
-/* The slider */
-.slider {
+body {
+  background: #202020;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.buttons-container {
   position: absolute;
-  cursor: pointer;
+  margin: auto;
   top: 0;
+  right: 0;
+  bottom: 400;
+  left: 0;
+  width: 395px;
+  height: 100px;
+  border-radius: 45px;
+  background: #151515;
+  box-shadow: inset 0 0 2px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+ul {
+  list-style: none;
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1px;
+  height: 90px;
+  width: 95px;
+  background: #202020;
+  border-top: 1px solid #353535;
+  box-shadow: 0 15px 20px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.5s;
+}
+ul li:nth-of-type(1) {
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+ul li:last-of-type {
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+ul li:hover {
+  cursor: pointer;
+}
+ul li a {
+  display: inline-block;
+  color: gray;
+  text-decoration: none;
+  font-size: 40px;
+  transition: all 0.5s;
+}
+
+.created-by {
+  position: absolute;
+  margin: auto;
   left: 0;
   right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  bottom: 10%;
+  width: 200px;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+}
+.created-by p {
+  color: white;
+}
+.created-by a {
+  color: crimson;
+  text-shadow: 0 0 15px rgba(244, 0, 0, 0.71);
+  text-decoration: none;
+  font-weight: 700;
+}
+.created-by a:hover {
+  text-decoration: underline;
 }
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+.active {
+  background: #151515;
+  border-top: none;
+  border-bottom: 1px solid #252525;
+  box-shadow: inset 0 0 10px 1px rgba(0, 0, 0, 0.8);
 }
 
-input:checked + .slider {
-  background-color: #2196F3;
+.active-text {
+  color: crimson;
+  text-shadow: 0 0 15px rgba(220, 10, 10, 0.5);
+	
 }
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
+/*Cool Navigation Bar*/	
+		
+		
+		.background {
+			
+			  background: linear-gradient(#8f282b, gray);
+              background-repeat: no-repeat;
+              background-size: cover;
+              height:2000px;
+		   	  /*Background Height*/
+			}
+		
 
 		
-        .board {
+		.button {
+			
+			margin_left:auto;
+			margin_right:auto;
+			display:block;
+			
+			/* Add float:middle; if doesn't work*/
+			
+		}
+		
+		/*Took From Last index.html Code*/
+		
+		     .board {
             text-align: center;
             padding-top: 40px;
+			max-width: 800px; /* Adjust the maximum width as needed */
+    		margin: 0 auto; /* Centers the board horizontally */
+			float:left;
+			padding-left:7em;
+				 
 			
-        }
+        }<meta name="" content="">
 
 
         .row {
@@ -103,10 +201,15 @@ input:checked + .slider:before {
             height: 90px;
         }
 
-        .odd-row .tile {}
+        .tile {
+			
+			margin-bottom:-2em;
+			
+		}
 
         .generator-div {
             display: grid;
+			
         }
 
         .text-overlay {
@@ -126,9 +229,7 @@ input:checked + .slider:before {
             margin-top: 10px;
         }
 
-        .button {
-           float: middle;
-        }
+       }
 		
 		.title {
 			
@@ -141,47 +242,41 @@ input:checked + .slider:before {
 			
 		}
 		
-		.background {
-			
-			
-   background: linear-gradient(#1167b1, gray);
 
-
-			
-			
-			
-		}
 		
 		
 		
 		
-		.center_button{
-			
-			
-			
-			padding-right:11.5em;
-			float: right;
-			padding-top:10em
-			
-		}
 		
-		.board {
+	/*	.board {
 			
 			
 			padding-right:50em;
 			
 		}
 		
+	*/
+		
+		/* Generate Button CSS Code From Here*/
+		
 		.button {
 			
 			font-family:"Copperplate";
-			font-size:100px;
-			
-			
-			
+			font-size:90px;
 			
 			
 		}
+		
+		.center_button{
+			
+			
+			margin-right:10.5em;
+			float: right;
+			padding-top:13em
+			
+		}
+		
+		/* Generate Button CSS Code Until 249-266*/
 		
 		.setup {
 			
@@ -248,17 +343,17 @@ input:checked + .slider:before {
 			
 		}
 		
-		h3 {
+		    h3 {
 			
 			text-align:center;
 			font-family:"Copperplate";
-			font-size:50px;
-			margin-top:-2.5em;
+			font-size:90px;
+			padding-top:1.2em;
+				
 			
-			
-			
-			
-		}
+			/* This Is The Caption */
+
+			}
 		
 		.center_switch {
 			
@@ -286,69 +381,81 @@ input:checked + .slider:before {
 			
 			
 		}
+			
+
 		
-	
-	
 	</style>
-    
-    <py-config>
+	
+	<py-config>
         packages = []
         [[fetch]]
         files=["./catan1.py"]
     </py-config>
+	
 
 </head>
+	
 
 <body class="background">
 	
+	 
+	<div class="background">
 	
-
-    <py-script src="catan1.py"></py-script>
-	<div><h1 class="title">Catan Board Generator</h1>
-	<h3>Extension 5-6 Player</h3>
-	</div>
+		<div class="button-position">
 	
-	<div class="generator-div"></div>
 	
-	<!-- Rectangular switch -->
-	<div class="center_switch">
-<label class="switch">
-  <input type="checkbox" onclick="redirectToPage1()">
-  <span class="slider"></span>
-</label>	
+	<div class="buttons-container">
+  <ul>
+    <li class="active"><a href="#" class="active-text"><i class="fa fa-codepen" aria-hidden="true"></i></a></li>
+    <li><a href="index.html"><i class=" hjbjkbjkbjk" aria-hidden="true"><img src="game_logo.png" class="game"></i></a></li>
+    <li><a href="movies.html"><i class="fa fa-rocket" aria-hidden="true"><img src="proxy.png" class="movie"></i></a></li>
+    <li><a href="tools.html"><i class="fa fa-user-circle" aria-hidden="true"><img src="tools.png" class="tools"></i></a></li>
+  </ul>
+			</div>
+			
+			</div>
 		
-		</div>
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<h3 class="caption">Extension 5-6 Player</h3>
+
+<py-script src="catan1.py"></py-script>
+
+<div class="generator-div"></div>
         
         <div class="grid-item">
 			<div class="center_button"><button py-click="generate()" class="button">Generate</button></div>
             <div id="output" class="board"></div>
            
         </div>
-	
-	<div class="random">
-	
-	<div class="lineA"><hr style="width:100%;margin-top:0"></div>
-	
-	
-	
-	<marquee direction="right" scrollamount="25"><img src="robber.PNG" class="robber"></marquee>
-	
-	<div class="lineB"><hr style="width:100%;margin-left:0"></div>
-	
-	
-	<img src="final_elements.PNG" class="fun" align="center"/>
-	
-	
-	
-	<div class="lineA"><hr style="width:100%;margin-top:0"></div>
-	
-	<marquee direction="left" scrollamount="25"><img src="robber.PNG" class="robber"></marquee>
-	
-	<div class="lineB"><hr style="width:100%;margin-left:0"></div>
-	
+		
+		
+		
+			
+			
+		
+
 	</div>
-
-	
 </body>
-
 </html>
+
+
+
+
+
+
+
+ 
