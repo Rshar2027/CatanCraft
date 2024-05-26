@@ -219,12 +219,12 @@ body {
 		
 		
 		
-		.background {
+		body {
 			
 			  background: linear-gradient(#34422b, gray);		
               background-repeat: no-repeat;
               background-size: cover;
-              height:800px;
+              height:900px;
 		   	  /*Background Height*/
 			}
 		
@@ -413,7 +413,7 @@ body {
 			text-align:center;
 			font-family:"Copperplate";
 			font-size:90px;
-			padding-top:1.2em;
+			margin-top:-1em;
 				
 			
 			/* This Is The Caption */
@@ -452,6 +452,8 @@ body {
 	</style>
 	
 	<py-config>
+		[splashscreen]
+        	enabled = false
         packages = []
         [[fetch]]
         files=["./catan1.py"]
@@ -461,10 +463,10 @@ body {
 </head>
 	
 
-<body class="background">
+<body>
 	
 	 
-	<div class="background">
+	<div>
 	
 		<div class="button-position">
 	
